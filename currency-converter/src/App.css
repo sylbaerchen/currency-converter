@@ -14,6 +14,11 @@ body {
 h1 {
   margin: 0;
 }
+@media (min-width: 750px) {
+  h1 {
+    margin: 2rem;
+  }
+}
 
 .input {
   border: none;
@@ -26,17 +31,25 @@ h1 {
   outline: none;
   font-family: "Nunito", sans-serif;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 .input:focus {
   background-color: #ffffe4;
 }
+@media (min-width: 450px) {
+  .input {
+   
+    max-width: unset;
+  }
+  
+}
 @media (min-width: 750px) {
   .input {
-    background-color: #a3ff9e;
+    background-color: #d7ffd5;
+    max-width: unset;
   }
   .input:focus {
-    background-color: #93ff8d;
+    background-color: #d0ffcd;
   }
 }
 
@@ -58,6 +71,7 @@ h1 {
 @media (min-width: 750px) {
   .calc-container {
     background-color: aliceblue;
+    padding: 5% 20vw;
   }
 }
 
@@ -77,7 +91,3 @@ select {
   font-size: 2rem;
   margin: 2rem 0;
 }
-
-/* option {
-  background-color: pink;
-} */
