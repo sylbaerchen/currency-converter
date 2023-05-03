@@ -15,9 +15,6 @@ function App() {
   const [amount, setAmount] = useState(1);
   const [amountInFromCurrency, setAmountInFromCurrency] = useState(true);
 
-  console.log(exchangeRate);
-  /* console.log(currencyOptions); */
-
   let toAmount, fromAmount;
   if (amountInFromCurrency) {
     fromAmount = amount;
@@ -37,7 +34,6 @@ function App() {
         setFromCurrency(secondCurrency);
         setToCurrency(firstCurrency);
         setExchangeRate(data.data[firstCurrency]);
-        console.log(data);
       });
   }, []);
 
@@ -48,7 +44,6 @@ function App() {
       )
         .then((res) => res.json())
         .then((data) => setExchangeRate(data.data[toCurrency]));
-    console.log(toCurrency);
   }, [fromCurrency, toCurrency]);
 
   function handleFromAmountChange(e) {
@@ -63,25 +58,28 @@ function App() {
 
   return (
     <div>
-      <h1>Convert</h1>
-      <CurrencyRow
-        currencyOptions={currencyOptions}
-        selectedCurrency={fromCurrency}
-        onChangeCurrency={(e) => setFromCurrency(e.target.value)}
-        onChangeAmount={handleFromAmountChange}
-        amount={fromAmount}
-      />
-      <div className="equals">=</div>
-      <CurrencyRow
-        currencyOptions={currencyOptions}
-        selectedCurrency={toCurrency}
-        onChangeCurrency={(e) => setToCurrency(e.target.value)}
-        onChangeAmount={handleToAmountChange}
-        amount={toAmount}
-      />
+      <h1>Convert Currency</h1>
+      <div className="calc-container">
+        <CurrencyRow
+          currencyOptions={currencyOptions}
+          selectedCurrency={fromCurrency}
+          onChangeCurrency={(e) => setFromCurrency(e.target.value)}
+          onChangeAmount={handleFromAmountChange}
+          amount={fromAmount}
+        />
+        <div className="equals">
+          <img src="/left-right.png" alt="arrows"></img>
+        </div>
+        <CurrencyRow
+          currencyOptions={currencyOptions}
+          selectedCurrency={toCurrency}
+          onChangeCurrency={(e) => setToCurrency(e.target.value)}
+          onChangeAmount={handleToAmountChange}
+          amount={toAmount}
+        />
+      </div>
     </div>
   );
 }
 
 export default App;
-
