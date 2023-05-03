@@ -1,28 +1,83 @@
 body {
-    margin: 0; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    text-align: center;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+  background-color: aquamarine;
+  font-weight: bold;
+  font-size: 1rem;
 }
 
 h1 {
-    margin: 0 0 .5rem 0;
+  margin: 0;
 }
 
 .input {
-    border: 1px solid #333;
-    border-radius: .3rem;
-    padding: .25rem;
-    width: 7em;
+  border: none;
+  background-color: whitesmoke;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  width: 100%;
+  max-width: 50%;
+  text-align: center;
+  outline: none;
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+}
+.input:focus {
+  background-color: #ffffe4;
+}
+@media (min-width: 750px) {
+  .input {
+    background-color: #a3ff9e;
+  }
+  .input:focus {
+    background-color: #93ff8d;
+  }
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.calc-container {
+  display: flex;
+  background-color: aquamarine;
+  border-radius: 1rem;
+  flex-direction: column;
+  padding: 5rem 0rem;
+  align-items: center;
+}
+@media (min-width: 750px) {
+  .calc-container {
+    background-color: aliceblue;
+  }
 }
 
 select {
-    margin-left: .5rem;
+  margin-left: 0.5rem;
+  border: none;
+  font-size: large;
+  margin-top: 0.5rem;
+  font-family: "Nunito", sans-serif;
+  font-size: 1.5rem;
+  background-color: transparent;
+  outline: none;
 }
 
 .equals {
-    font-weight: bold;
-    font-size: 2rem;
+  font-weight: bold;
+  font-size: 2rem;
+  margin: 2rem 0;
 }
+
+/* option {
+  background-color: pink;
+} */
